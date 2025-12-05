@@ -64,7 +64,7 @@ class BaseSQLHelper(_SharedLogger):
 
     def __init__(self, **kwargs):
         self._initialization_string = f"initialized {self.__str__()}"
-        self._logger = self._setup_logger(basic_config_level=kwargs.get('basic_config_level'))
+        self._logger = self._setup_logger(**kwargs)
         self._connection, self._cursor = None, None
         self._query_results = None
 
@@ -540,7 +540,7 @@ class BaseCreateTriggers(_SharedLogger):
     def __init__(self, **kwargs):
         self._cursor = None
         self._connection = None
-        self._logger = self._setup_logger()
+        self._logger = self._setup_logger(**kwargs)
         self.audit_log_table_init()
         if self.has_required_class_attributes:
             pass
