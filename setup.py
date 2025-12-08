@@ -27,6 +27,7 @@ setup(
     name=project_name,
     version=get_property('__version__', project_name),
     packages=['SQLHelpersAJM', 'SQLHelpersAJM.backend', 'SQLHelpersAJM.helpers'],
+    install_requires=['psycopg[binary,pool]', 'pyodbc'],  # ['psycopg-binary', 'psycopg-pool'],
     url='https://github.com/amcsparron2793-Water/SQLHelpersAJM',
     download_url=f'https://github.com/amcsparron2793-Water/SQLHelpersAJM/archive/refs/tags/{get_property("__version__", project_name)}.tar.gz',
     keywords=[],
